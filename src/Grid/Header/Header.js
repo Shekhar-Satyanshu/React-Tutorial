@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import {Button, Col, Container, Row ,Form, FormGroup, Label, Input,  Nav, NavItem, NavLink} from 'reactstrap';
 
+import { createBrowserHistory } from 'history'
 
  class Sidebar extends Component {
    
@@ -11,34 +12,31 @@ import {Button, Col, Container, Row ,Form, FormGroup, Label, Input,  Nav, NavIte
        
     }
 
+    onLogout = () => {
+        createBrowserHistory.push('/login');
+    }
   
     render () {
         return (
-       
+            <div className=" navbar sticky-top header">
+        <Nav className="header-wrapper" style={{textAlign:'center'}}>
+            <NavItem className="header-item">
+                <NavLink href="#">HOME</NavLink>
+            </NavItem>
+            <NavItem className="header-item">
+                <NavLink href="#">ABOUT US</NavLink>
+            </NavItem>
+            <NavItem className="header-item">
+                <NavLink href="#">BUISNESS</NavLink>
+            </NavItem>
            
-                    <Row className="navbar sticky-top header">
-                        <Col md="10">
-                        <Nav className="float-right header-wrapper">
-                            <NavItem className="header-item">
-                                <NavLink href="#">HOME</NavLink>
-                            </NavItem>
-                            <NavItem className="header-item">
-                                <NavLink href="#">ABOUT US</NavLink>
-                            </NavItem>
-                            <NavItem className="header-item">
-                                <NavLink href="#">BUISNESS</NavLink>
-                            </NavItem>
-                        </Nav>
-                        </Col>
-                        <Col md="2">
-                            <div className="float-right Login-btn">
-                                
-                                <Button color="danger">Logout</Button>
-                            </div>
-                        </Col>
-                    </Row>
-                 
-       
+         </Nav>
+        <Nav>
+            <NavItem className="header-items float-right">
+                <Button color="danger" onClick={this.onLogout}>Logout</Button>
+            </NavItem>
+        </Nav>
+            </div>
             
         )
     }

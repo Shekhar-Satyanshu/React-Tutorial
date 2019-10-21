@@ -4,7 +4,7 @@ import './App.css';
 import Login from './Views/Pages/Login/Login';
 import Register from './Views/Pages/Register/Register';
 import Dashboard from './Views/Pages/Dashboard/Dashboard';
-
+import Profile from './Views/Pages/Profile/Profile';
 
 class App extends Component {
 
@@ -16,6 +16,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/dashboard" component={Dashboard} />
+            <Route path='/profile' component={Profile} />
           </div>
         </Router>  
       </div>
